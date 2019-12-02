@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace TNRD.AdventOfCode.DayTwo.Shared
 {
@@ -31,6 +33,25 @@ namespace TNRD.AdventOfCode.DayTwo.Shared
         private int GetSmallestArea()
         {
             return Math.Min(Length * Width, Math.Min(Width * Height, Height * Length));
+        }
+
+        public int CalculateRequiredRibbon()
+        {
+            return CalculateBow() + CalculateWrap();
+        }
+
+        private int CalculateBow()
+        {
+            return Length * Width * Height;
+        }
+
+        private int CalculateWrap()
+        {
+            List<int> orderedNumbers = new List<int>()
+            {
+                Length, Width, Height
+            }.OrderBy(x => x).ToList();
+            return orderedNumbers[0] * 2 + orderedNumbers[1] * 2;
         }
     }
 }
