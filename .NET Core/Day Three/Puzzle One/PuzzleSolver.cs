@@ -1,3 +1,5 @@
+using TNRD.AdventOfCode.DayThree.Shared;
+
 namespace TNRD.AdventOfCode.DayThree.PuzzleOne
 {
     public class PuzzleSolver : Foundation.PuzzleSolver
@@ -10,7 +12,9 @@ namespace TNRD.AdventOfCode.DayThree.PuzzleOne
 
         public override object Solve()
         {
-            throw new System.NotImplementedException();
+            DeliveryBoy deliveryBoy = new DeliveryBoy(Input);
+            deliveryBoy.WalkPath();
+            return deliveryBoy.HouseCount;
         }
     }
 }
