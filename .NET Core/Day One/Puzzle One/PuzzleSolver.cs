@@ -1,18 +1,18 @@
-using System;
 using System.Linq;
 
 namespace TNRD.AdventOfCode.DayOne.PuzzleOne
 {
     public class PuzzleSolver : Foundation.PuzzleSolver
     {
-        public PuzzleSolver(int day, string sessionCookie) : base(day, sessionCookie)
+        public override int Day => 1;
+
+        public PuzzleSolver(string sessionCookie) : base(sessionCookie)
         {
         }
 
-        public override void Solve()
+        public override object Solve()
         {
-            int sum = Input.Select(ConvertToInt).Sum();
-            Console.WriteLine($"Puzzle answer for day {Day} is {sum}");
+            return Input.Select(ConvertToInt).Sum();
         }
 
         private int ConvertToInt(char value)

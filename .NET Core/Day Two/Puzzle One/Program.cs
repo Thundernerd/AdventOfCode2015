@@ -1,6 +1,6 @@
 ﻿using TNRD.AdventOfCode.Foundation;
 
-namespace TNRD.AdventOfCode.DayOne.PuzzleTwo
+namespace TNRD.AdventOfCode.DayTwo.PuzzleOne
 {
     class Program : BaseProgram
     {
