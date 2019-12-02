@@ -1,14 +1,14 @@
-using System;
-
 namespace TNRD.AdventOfCode.DayOne.PuzzleTwo
 {
     public class PuzzleSolver : Foundation.PuzzleSolver
     {
-        public PuzzleSolver(int day, string sessionCookie) : base(day, sessionCookie)
+        public override int Day => 1;
+
+        public PuzzleSolver(string sessionCookie) : base(sessionCookie)
         {
         }
 
-        public override void Solve()
+        public override object Solve()
         {
             int floor = 0;
             int result = 0;
@@ -29,7 +29,7 @@ namespace TNRD.AdventOfCode.DayOne.PuzzleTwo
                 }
             }
 
-            Console.WriteLine($"Puzzle answer for day {Day} is {result}");
+            return result;
         }
     }
 }
