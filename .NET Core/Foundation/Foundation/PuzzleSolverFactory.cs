@@ -6,15 +6,17 @@ namespace TNRD.AdventOfCode.Foundation
 {
     public class PuzzleSolverFactory
     {
+        private const string SESSION_COOKIE_PATH = "../../../../../session_cookie.txt";
+        
         public static IPuzzleSolver Create()
         {
-            if (!File.Exists("session_cookie.txt"))
+            if (!File.Exists(SESSION_COOKIE_PATH))
             {
                 Console.WriteLine("A file containing the session cookie is required to continue.");
                 return null;
             }
 
-            string sessionCookie = File.ReadAllText("session_cookie.txt");
+            string sessionCookie = File.ReadAllText(SESSION_COOKIE_PATH);
 
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
             foreach (Assembly assembly in assemblies)
